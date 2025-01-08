@@ -28,9 +28,7 @@ func (s *SharedResource) increment() int64 {
 
 // A function to be benchmarked with concurrency
 func concurrentFunction() {
-	for {
-		sharedResource.increment()
-	}
+	sharedResource.increment()
 }
 
 // A helper function to run multiple goroutines concurrently
