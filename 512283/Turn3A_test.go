@@ -5,6 +5,7 @@ import (
 	"math/rand"
 	"net/http"
 	"net/http/httptest"
+	"sync"
 	"testing"
 	"time"
 )
@@ -79,15 +80,18 @@ func BenchmarkAuthAndDataAccessParallel(b *testing.B) {
 	})
 }
 
-// Benchmark for resource contention
+// Benchmark for resource contention with synchronization
 func BenchmarkResourceContention(b *testing.B) {
 	var sharedResource int
+	var mu sync.Mutex // Mutex to protect shared resource
 
 	b.ResetTimer()
 	b.RunParallel(func(pb *testing.PB) {
 		for pb.Next() {
+			mu.Lock() // Lock before accessing the shared resource
 			sharedResource++
 			sharedResource--
+			mu.Unlock() // Unlock after modifying the shared resource
 		}
 	})
 }
