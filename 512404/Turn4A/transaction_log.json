@@ -1,0 +1,1 @@
+{"ID":"2","Operation":"placeOrder","UserID":"1","OrderID":"2","OrderDetails":{"Cryptocurrency":"bitcoin","Type":"sell","Price":20,"Amount":2},"BalanceDetails":null,"Timestamp":"2025-01-14T22:22:58+05:30"}
