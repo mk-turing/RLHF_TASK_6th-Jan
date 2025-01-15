@@ -1,0 +1,17 @@
+{
+  "features": [
+    {
+      "name": "feature1",
+      "state": true,
+      "dependencies": ["feature2"]
+    },
+    {
+      "name": "feature2",
+      "state": true
+    },
+    {
+      "name": "feature3",
+      "state": true
+    }
+  ]
+}
