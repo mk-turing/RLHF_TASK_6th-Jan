@@ -1,0 +1,14 @@
+{
+  "handlers": [
+    {
+      "name": "TextMessageHandler",
+      "type": "TextMessageHandler",
+      "message_type": "1"
+    },
+    {
+      "name": "BinaryMessageHandler",
+      "type": "BinaryMessageHandler",
+      "message_type": "2"
+    }
+  ]
+}
